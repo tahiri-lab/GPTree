@@ -1,7 +1,8 @@
 # GPTree
 ## **G**enerator of **P**hylogenetic **tree**s (for supertrees)
 
-## Générateur d'arbres phylogénétiques (pour les super-arbres)
+----
+A vesion of the Generator of **clusters** of phylogenetic trees with overlapping and HGT is [here](https://github.com/tahiri-lab/GPTree/tree/TPTree_cluster).
 
 This [generator](https://github.com/tahiri-lab/GPTree/blob/main/Overlap_Phyltree_generator_for_supertree_inference.ipynb) (**G**enerator of **P**hylogenetic **tree**s) can be used to generate a specified number of phylogenetic trees in Newick format with a variable number of leaves and with some level of overlap between trees. With this tool, the user can generate a dataset with trees (particularly, gene trees with **[horizontal gene transfer](https://github.com/tahiri-lab/GPTree/tree/main/HGT_test)** implemented), which is saved in txt, with the possibility of its further use in their scientific experiments (e.g., testing classification algorithms or inference supertrees).
 
@@ -10,7 +11,7 @@ The user has to specify several initial parameters:
 
 *   The minimum possible number of leaves for each tree
 *   The maximum possible number of leaves for each tree
-*   The average level of overlap (common leaves) between the trees in the set. We will define the level of overlap between two trees as the number of common leaves (between these trees) divided by the summed length of these trees minus the number of common leaves.
+*   The average level of overlap (common leaves) between the trees in the set. We will define the level of overlap between two trees as the number of common leaves (between these trees) divided by the summed length of these trees minus the number of common leaves. *Note:* for the [generator of clusters](https://github.com/tahiri-lab/GPTree/tree/TPTree_cluster) we tested another approach to calculate the average level of overlap between 2 trees.
 
 **Initial values set by the user:**
 
