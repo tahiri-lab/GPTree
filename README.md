@@ -1,5 +1,5 @@
 # GPTree_cluster
-##Generator of clusters of phylogenetic trees with overlapping and HGT
+## Generator of clusters of phylogenetic trees with overlapping and HGT
 
 This generator can be used to generate a specified number of clusters of phylogenetic trees in Newick format with a *variable number of leaves*  and with some level of *overlap* between trees in clusters. With this tool, the user can generate a dataset with clusters of gene trees (particularly, gene trees with **horizontal gene transfer** implemented), which is saved in txt, with the possibility of its further use in their scientific experiments (e.g., testing classification algorithms or inference supertrees).
 
@@ -9,7 +9,7 @@ The user has to specify several initial parameters:
 *   The number of clusters.
 *   The minimum possible number of leaves for trees in a cluster.
 *   The maximum possible number of leaves for trees in a cluster.
-*   The average level of overlap (common leaves) between the trees in each cluster. We will define the level of overlap between trees T_1 and T_2 as the average between 2 values: (1) the number of common leaves in trees T_1 and T_2, divided by the number of leaves in tree T_1, (2)  the number of common leaves in trees T_1 and T_2, divided by the number of leaves in tree T_2.
+*   The average level of overlap (common leaves) between the trees in each cluster. We will define the level of overlap between trees $T_1$ and $T_2$ as the average between 2 values: (1) the number of common leaves in trees $T_1$ and $T_2$, divided by the number of leaves in tree $T_1$, (2)  the number of common leaves in trees $T_1$ and $T_2$, divided by the number of leaves in tree $T_2$.
 
 **Initial values set by the user:**
 
