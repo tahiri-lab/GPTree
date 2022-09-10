@@ -11,6 +11,8 @@ The user has to specify several initial parameters:
 *   The maximum possible number of leaves for trees in a cluster.
 *   The average level of overlap (common leaves) between the trees in each cluster. We will define the level of overlap between trees $T_1$ and $T_2$ as the average between 2 values: (1) the number of common leaves in trees $T_1$ and $T_2$, divided by the number of leaves in tree $T_1$, (2)  the number of common leaves in trees $T_1$ and $T_2$, divided by the number of leaves in tree $T_2$.
 
+**Important note:** For calculation the level of overlapping we can use several metrics such as the Jaccard Similarity, also called the Jaccard Index or Jaccard Similarity Coefficient (given two sets, A and B, the Jaccard Similarity is defined as the size of the intersection of set A and set B (i.e. the number of common elements) over the size of the union of set A and set B (i.e. the number of unique elements)) or the Overlap Coefficient, also known as the Szymkiewicz–Simpson coefficient, is defined as the size of the union of set A and set B over the size of the smaller set between A and B. To get more stable results we calculate (in this version) the mean overlap using both sets.
+
 **Initial values set by the user:**
 
 *   **k** = the number of clusters, integer (1<=k<100).
