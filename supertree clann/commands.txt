@@ -1,0 +1,20 @@
+# This is a commands file to generate supertrees
+# To run this file call clann as follows:
+# 'clann -c commands.txt'
+#
+
+# open the input file (use, for example, generated trees from the GPTree generator)
+exe /content/clann/examples/generated2.txt
+
+# to use MRP as the criterion for assessing supertrees
+#set criterion=mrp;
+
+# Carry out a heuristic search for the best supertree usign the criterion selected
+nj savetrees=supertreeraw.txt;
+#hs;
+
+# Carry out a bootstrap supertree analysis using the criterion selected
+bootstrap consensusfile=supertreeconsensus.txt;
+
+# Quit clann - not necessary if calling clann with the '-n' option 
+quit;
