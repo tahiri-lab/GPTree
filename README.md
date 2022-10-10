@@ -1,4 +1,4 @@
-# GPTree_cluster
+# GPTreeCluster
 ## Generator of clusters of phylogenetic trees with overlapping and HGT
 
 This generator can be used to generate a specified number of clusters of phylogenetic trees in Newick format with a *variable number of leaves*  and with some level of *overlap* between trees in clusters. With this tool, the user can generate a dataset with clusters of gene trees (particularly, gene trees with **horizontal gene transfer** implemented), which is saved in txt, with the possibility of its further use in their scientific experiments (e.g., testing classification algorithms or inference supertrees).
