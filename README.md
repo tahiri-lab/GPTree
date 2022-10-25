@@ -25,6 +25,6 @@ Currently, the generator works very slow for the levels of overlap <0.2 and >0.7
 
 **The basic workflow:**
 
-![The basic workflow](https://github.com/tahiri-lab/GPTree/blob/TPTree_cluster/img/flow.png)
+![The basic workflow](https://github.com/tahiri-lab/GPTree/blob/GPTreeCluster/img/flow.png)
 
 **Output:** The generated dataset of the specified number of trees (separated by clusters) in Newick format is saved in the folder (e.g. trees_3_6_50.txt file, where the numbers indicate the number of clusters, number of trees in each cluster, and level of overlapping).
