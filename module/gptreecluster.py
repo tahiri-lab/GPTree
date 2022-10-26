@@ -69,6 +69,7 @@ plevel = float(sys.argv[5])
 # sys.argv includes a list of elements starting with the program
 if len(sys.argv) < 5:
     parser.print_usage()
+    print("Use these arguments: gptreecluster.py k Lmin Lmax Ngen p")
     sys.exit(1)
 
 #Checking values
