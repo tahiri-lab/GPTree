@@ -56,7 +56,7 @@ Currently, the generator works very slow for the levels of overlap <0.2 and >0.7
 """
 
 parser=argparse.ArgumentParser(description="Use these arguments: gptreecluster.py k Lmin Lmax Ngen p")
-args = parser.parse_args()
+#args = parser.parse_args()
 
 
 
