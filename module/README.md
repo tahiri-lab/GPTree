@@ -24,4 +24,4 @@ Example:
 
 `python gptreecluster.py 3 15 25 40 0.5 `
 
-The generated dataset of the specified number of trees (separated by clusters) in Newick format is saved in the folder (e.g. trees_3_6_50.txt file, where the numbers indicate the number of clusters, number of trees in each cluster, and level of overlapping), from which the code was launched.
+The generated dataset of the specified number of trees (separated by clusters) in Newick format is saved in the folder (e.g. trees_3_40_50.txt file, where the numbers indicate the number of clusters, number of trees in each cluster, and level of overlapping), from which the code was launched.
