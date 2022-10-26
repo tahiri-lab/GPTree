@@ -1,6 +1,8 @@
 # GPTreeCluster
 ## Generator of clusters of phylogenetic trees with overlapping and HGT
 
+> See *.py version with instructions [here](https://github.com/tahiri-lab/GPTree/tree/GPTreeCluster/module).
+
 This generator can be used to generate a specified number of clusters of phylogenetic trees in Newick format with a *variable number of leaves*  and with some level of *overlap* between trees in clusters. With this tool, the user can generate a dataset with clusters of gene trees (particularly, gene trees with **horizontal gene transfer** implemented), which is saved in txt, with the possibility of its further use in their scientific experiments (e.g., testing classification algorithms or inference supertrees).
 
 The generator is based on the use of the [AsymmeTree library](https://github.com/david-schaller/AsymmeTree).
