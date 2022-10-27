@@ -69,7 +69,16 @@ plevel = float(sys.argv[5])
 # sys.argv includes a list of elements starting with the program
 if len(sys.argv) < 5:
     parser.print_usage()
-    print("Use these arguments: gptreecluster.py k Lmin Lmax Ngen p")
+    print("""
+    Instruction:
+    To generate clusters, the user has to specify the following parameters:
+      gptreecluster.py k Lmin Lmax Ngen p
+    -- k - number of clusters;
+    -- Lmin - minimum possible number of leaves for trees in a cluster;
+    -- Lmax - maximum possible number of leaves for trees in a cluster;
+    -- Ngen - number of tree to generate (in each cluster);
+    -- p - average level of overlap (common leaves) between the trees in each cluster.
+    """)
     sys.exit(1)
 
 #Checking values
