@@ -78,6 +78,10 @@ if len(sys.argv) < 5:
     -- Lmax - maximum possible number of leaves for trees in a cluster;
     -- Ngen - number of tree to generate (in each cluster);
     -- p - average level of overlap (common leaves) between the trees in each cluster.
+    The generated dataset of the specified number of trees (separated by clusters) 
+    in Newick format is saved in the folder (e.g. trees_3_40_50.txt file, where 
+    the numbers indicate the number of clusters, number of trees in each cluster, 
+    and level of overlapping), from which the code was launched.
     """)
     sys.exit(1)
 
