@@ -2,7 +2,7 @@
 ## **G**enerator of **P**hylogenetic **tree**s (for supertrees)
 
 ----
-A vesion of the Generator of **clusters** of phylogenetic trees with overlapping and HGT is [here](https://github.com/tahiri-lab/GPTree/tree/TPTree_cluster).
+> A **new** vesion of the Generator of **clusters** of phylogenetic trees with overlapping and HGT is availbale [here](https://github.com/tahiri-lab/GPTree/tree/TPTree_cluster).
 
 This [generator](https://github.com/tahiri-lab/GPTree/blob/main/Overlap_Phyltree_generator_for_supertree_inference.ipynb) (**G**enerator of **P**hylogenetic **tree**s) can be used to generate a specified number of phylogenetic trees in Newick format with a variable number of leaves and with some level of overlap between trees. With this tool, the user can generate a dataset with trees (particularly, gene trees with **[horizontal gene transfer](https://github.com/tahiri-lab/GPTree/tree/main/HGT_test)** implemented), which is saved in txt, with the possibility of its further use in their scientific experiments (e.g., testing classification algorithms or inference supertrees).
 
