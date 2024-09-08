@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-
 ##Generator of clusters of phylogenetic trees with overlapping and HGT
 
 This generator can be used to generate a specified number of clusters of phylogenetic trees in Newick format with a *variable number of leaves*  and with some level of *overlap* between trees in clusters. With this tool, the user can generate a dataset with clusters of gene trees (particularly, gene trees with **horizontal gene transfer** implemented), which is saved in txt, with the possibility of its further use in their scientific experiments (e.g., testing classification algorithms or inference supertrees).
@@ -18,7 +17,6 @@ The user has to specify several initial parameters:
 To generate species and gene trees with horizintal gene transfer we use this library: https://github.com/david-schaller/AsymmeTree
 
 **Generator**
-
 
 """
 import argparse
@@ -58,14 +56,6 @@ Currently, the generator works very slow for the levels of overlap <0.2 and >0.7
 parser=argparse.ArgumentParser(description="Use these arguments: gptreecluster.py k Lmin Lmax Ngen p")
 #args = parser.parse_args()
 
-
-
-k = int(sys.argv[1])
-Lmin = int(sys.argv[2])
-Lmax = int(sys.argv[3])
-Ngen = int(sys.argv[4])
-plevel = float(sys.argv[5])
-
 # sys.argv includes a list of elements starting with the program
 if len(sys.argv) < 5:
     parser.print_usage()
@@ -84,6 +74,13 @@ if len(sys.argv) < 5:
     and level of overlapping), from which the code was launched.
     """)
     sys.exit(1)
+
+k = int(sys.argv[1])
+Lmin = int(sys.argv[2])
+Lmax = int(sys.argv[3])
+Ngen = int(sys.argv[4])
+plevel = float(sys.argv[5])
+
 
 #Checking values
 if k < 1 or k > 100 or Lmin < 5 or Lmin >499 or Lmin > Lmax or Lmin==Lmax or Lmax >500 or Ngen < 3 or Ngen >500:
@@ -134,21 +131,21 @@ def gptree_cluster_gene(sptree):
     if (average_overlap.mean() <= plevel+0.01) and (average_overlap.mean() >= plevel-0.01):
       overlap_set1.append(overlap_level_temp)
       cluster_dataset.append(gene_tree_next) #we add the generated gene tree to our dataset if this tree satisfies our conditions
-      #print("Now we have ", len(cluster_dataset), " trees") #we display the current number of trees in our dataset to see the progress
+      print("Now we have ", len(cluster_dataset), " trees") #we display the current number of trees in our dataset to see the progress
   #print("All done. Good job!")
   print("Now we have ", len(cluster_dataset), " trees")
   return cluster_dataset
 
 # Generate k clusters of trees and save them to the txt file
 
-tree_cluster_dataset = "trees_%s_%s_%s" % (k, Ngen, int(plevel*100))
+tree_cluster_dataset = "trees_%s_%s_%s_%s_%s" % (k, Lmin, Lmax, Ngen, int(plevel*100))
 with open(r"%s.txt" % tree_cluster_dataset, "w") as file:
   for i in range(1, k+1):
     print("For cluster ", i)
     species_tree_k = gptree_speciestree()
     cluster_k = gptree_cluster_gene(species_tree_k)
   # now we write the generated gene trees to a txt file (trees in Newick format).
-    file.write("Cluster # %s" % (i)  + '\n') #if you don't need to separate clusters by the word "Cluster #", you can comment this line
+    #file.write("Cluster # %s" % (i)  + '\n') #if you don't need to separate clusters by the word "Cluster #", you can comment this line
 
   #write trees into the file line by line
     for tree in cluster_k:
