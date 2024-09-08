@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+#Authors: Aleksandr Koshkarov and Nadia Tahiri
+
 import argparse
 import sys
 import subprocess
@@ -8,11 +11,9 @@ from ete3 import Tree
 import asymmetree.treeevolve as te
 from asymmetree.tools.PhyloTreeTools import to_newick
 
-
 def install_packages():
     package = ['pandas', 'ete3', 'PyQt5', 'asymmetree']
     subprocess.check_call([sys.executable, '-m', 'pip', 'install'] + package, stdout=subprocess.DEVNULL)
-
 
 def validate_args(k, Lmin, Lmax, Ngen, plevel):
     if not (1 <= k <= 100) or not (5 <= Lmin < Lmax <= 500) or not (3 <= Ngen <= 500):
@@ -20,24 +21,28 @@ def validate_args(k, Lmin, Lmax, Ngen, plevel):
     if not (0.2 <= plevel <= 0.7):
         raise ValueError("Overlap level (plevel) must be between 0.2 and 0.7.")
 
+# Function to rename leaves of a tree with "L" prefix
+def rename_leaves(tree):
+    for leaf in tree:
+        leaf.name = f"L{leaf.name}"  # Add "L" before each leaf name
+    return tree
 
 def gptree_speciestree(Lmin, Lmax):
     N1 = random.randrange(Lmin, Lmax)  # Randomly choose the number of leaves for the generated tree
     return te.species_tree_n(N1)
 
-
+# Updated function to generate one gene tree and rename leaves
 def gptree_genetree(S1, hgt_rate=0.2, loss_rate=0.2, replace_prob=0.9):
     tree_simulator = te.GeneTreeSimulator(S1)
     T1 = tree_simulator.simulate(hgt_rate=hgt_rate, loss_rate=loss_rate, replace_prob=replace_prob)
     ogt = te.prune_losses(T1)
-    return Tree(to_newick(ogt, reconc=False), format=1)
-
+    Gn_Tree = Tree(to_newick(ogt, reconc=False), format=1)
+    return rename_leaves(Gn_Tree)
 
 def calculate_overlap(tree1, tree2):
     rf, _, common_leaves, _, _, _, _ = tree1.robinson_foulds(tree2, unrooted_trees=True)
     overlap_level = ((len(common_leaves) / len(tree1)) + (len(common_leaves) / len(tree2))) / 2
     return overlap_level
-
 
 def gptree_cluster_gene(sptree, Ngen, plevel):
     cluster_dataset = [gptree_genetree(sptree)]  # Add the first gene tree
@@ -53,7 +58,6 @@ def gptree_cluster_gene(sptree, Ngen, plevel):
             print(f"Now we have {len(cluster_dataset)} trees")
     
     return cluster_dataset
-
 
 def main():
     parser = argparse.ArgumentParser(description="Generate clusters of phylogenetic trees with specified overlap.")
@@ -82,7 +86,6 @@ def main():
                 file.write(tree.write() + '\n')
     
     print(f"All done. Generated trees saved to {tree_cluster_dataset}.txt")
-
 
 if __name__ == "__main__":
     install_packages()
