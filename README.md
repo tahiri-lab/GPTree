@@ -46,6 +46,30 @@ Currently, the generator works slow for the levels of overlap <0.2 and >0.7.
 
 ![The basic workflow](https://github.com/tahiri-lab/GPTree/blob/main/img/flow.png)
 
+## Usage
+
+To run the script, use the following command:
+
+```bash
+python gptree.py Lmin Lmax Ngen plevel
+```
+
+### Example:
+
+```bash
+python gptree.py 15 25 30 0.5
+```
+
+This will generate 30 trees with leaves ranging from 15 to 25 and an average overlap of 0.5. The trees will be saved in the following files:
+- **Gene trees**: `genetrees_50.txt`
+- **Species trees**: `speciestrees_50.txt`
+
+## Output
+
+The generated trees are saved in **Newick format**:
+- `genetrees_XX.txt`: Contains the gene trees with the specified overlap level (XX = plevel * 100).
+- `speciestrees_XX.txt`: Contains the species trees used for generating the gene trees.
+
 Examples of generated datasets see [here](https://github.com/tahiri-lab/GPTree/tree/main/test_datasets).
 
 The [Jupiter notebook](https://github.com/tahiri-lab/GPTree/blob/main/Overlap_Phyltree_generator_for_supertree_inference.ipynb) also contains steps to validate the generated dataset (tree visualization, number of trees and leaves, and level of overlap).
