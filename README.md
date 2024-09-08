@@ -2,9 +2,15 @@
 ## **G**enerator of **P**hylogenetic **tree**s (for supertrees)
 
 ----
-> A **new** vesion of the Generator of **clusters** of phylogenetic trees with overlapping and HGT is availbale [here](https://github.com/tahiri-lab/GPTree/tree/TPTree_cluster).
+> A **new** vesion of the Generator of **clusters** of phylogenetic trees with overlapping and HGT is available [here](https://github.com/tahiri-lab/GPTree/tree/TPTree_cluster).
 
-This [generator](https://github.com/tahiri-lab/GPTree/blob/main/Overlap_Phyltree_generator_for_supertree_inference.ipynb) (**G**enerator of **P**hylogenetic **tree**s) can be used to generate a specified number of phylogenetic trees in Newick format with a variable number of leaves and with some level of overlap between trees. With this tool, the user can generate a dataset with trees (particularly, gene trees with **[horizontal gene transfer](https://github.com/tahiri-lab/GPTree/tree/main/HGT_test)** implemented), which is saved in txt, with the possibility of its further use in their scientific experiments (e.g., testing clustering algorithms or inference supertrees).
+This solution (**G**enerator of **P**hylogenetic **tree**s) generates phylogenetic trees in Newick format with a specified number of leaves and a controlled level of overlap between the trees. The generator simulates gene trees with horizontal gene transfer (HGT) and is useful for scientific experiments such as testing clustering algorithms or inferring supertrees.
+
+If you use **GPTree** generator in your research or experiments, please consider citing the following paper:
+>  Koshkarov, A., & Tahiri, N. (2023). GPTree: Generator of Phylogenetic Trees with Overlapping and Biological Events for Supertree Inference. In _BIOINFORMATICS_ (pp. 212-219).
+DOI: [Link to Paper](https://doi.org/10.5220/0011697100003414)
+
+Thank you for your contribution to the community!
 
 The generator is based on the use of the [AsymmeTree library](https://github.com/david-schaller/AsymmeTree).
 The user has to specify several initial parameters:
