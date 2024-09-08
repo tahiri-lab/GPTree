@@ -4,6 +4,14 @@
 
 This tool generates clusters of phylogenetic trees in Newick format, with a *variable number of leaves* and a *configurable overlap* between the trees in each cluster. The trees also incorporate **horizontal gene transfer (HGT)**. The generated dataset can be used for scientific experiments such as testing classification algorithms or inferring supertrees.
 
+> If you use **GPTreeCluster** in your research or experiments, please consider citing the following paper:
+>
+> > Koshkarov, A., & Tahiri, N. (2023). GPTree Cluster: phylogenetic tree cluster generator in the context of supertree inference. _Bioinformatics Advances_, 3(1), vbad023.
+>
+> DOI: [Link to Paper](https://doi.org/10.1093/bioadv/vbad023)
+
+Thank you for your contribution to the community!
+
 ### Features:
 - Generates phylogenetic trees with **HGT**.
 - Allows users to specify the number of clusters and trees, as well as the overlap level between trees.
