@@ -70,6 +70,6 @@ The generated trees are saved in **Newick format**:
 - `genetrees_XX.txt`: Contains the gene trees with the specified overlap level (XX = plevel * 100).
 - `speciestrees_XX.txt`: Contains the species trees used for generating the gene trees.
 
-Examples of generated datasets see [here](https://github.com/tahiri-lab/GPTree/tree/main/test_datasets).
+See examples of generated datasets [here](https://github.com/tahiri-lab/GPTree/tree/main/test_datasets).
 
 The [Jupiter notebook](https://github.com/tahiri-lab/GPTree/blob/main/Overlap_Phyltree_generator_for_supertree_inference.ipynb) also contains steps to validate the generated dataset (tree visualization, number of trees and leaves, and level of overlap).
