@@ -10,7 +10,7 @@ from asymmetree.tools.PhyloTreeTools import to_newick
 
 def install_packages():
     """Install required packages."""
-    packages = ['ete3', 'PyQt5', 'asymmetree']
+    packages = ['pandas', 'ete3', 'PyQt5', 'asymmetree']
     subprocess.check_call([sys.executable, '-m', 'pip', 'install'] + packages, stdout=subprocess.DEVNULL)
 
 def validate_args(Lmin, Lmax, Ngen, plevel):
@@ -42,7 +42,7 @@ def generate_tree_with_overlap(Lmin, Lmax, plevel, temp_set, tree_dataset, speci
 
     overlap_tempset = []
     for i in range(len(temp_set)):
-        rf, _, common_leaves, _, _, _, _ = Tr1.robinson_foulds(temp_set[i], unrooted_trees=True)
+        common_leaves = set(Tr1.get_leaf_names()) & set(temp_set[i].get_leaf_names())
         overlap_level_temp = len(common_leaves) / (len(Tr1) + len(temp_set[i]) - len(common_leaves) + 0.001)
         overlap_tempset.append(overlap_level_temp)
 
@@ -99,4 +99,5 @@ def main():
 
 if __name__ == "__main__":
     install_packages()
+
     main()
