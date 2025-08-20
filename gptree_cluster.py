@@ -41,7 +41,7 @@ def gptree_genetree(S1, hgt_rate=0.2, loss_rate=0.2, replace_prob=0.9):
 
 def calculate_overlap(tree1, tree2):
     common_leaves = set(tree1.get_leaf_names()) & set(tree2.get_leaf_names())
-    overlap_level = ((len(common_leaves) / len(tree1)) + (len(common_leaves) / len(tree2))) / 2 # Sørensen–Dice
+    overlap_level = ((len(common_leaves) / len(tree1)) + (len(common_leaves) / len(tree2))) / 2
     #overlap_level = len(common) / (len(tree1) + len(tree2) - len(common)) # uncomment for the Jaccard coefficient
     return overlap_level
 
@@ -91,5 +91,6 @@ def main():
 if __name__ == "__main__":
     install_packages()
     main()
+
 
 
