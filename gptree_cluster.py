@@ -43,7 +43,7 @@ def calculate_overlap(tree1, tree2):
     common_leaves = set(tree1.get_leaf_names()) & set(tree2.get_leaf_names())
     overlap_level = ((len(common_leaves) / len(tree1)) + (len(common_leaves) / len(tree2))) / 2 # Sørensen–Dice
     #overlap_level = len(common) / (len(tree1) + len(tree2) - len(common)) # uncomment for the Jaccard coefficient
-     return overlap_level
+    return overlap_level
 
 def gptree_cluster_gene(sptree, Ngen, plevel):
     cluster_dataset = [gptree_genetree(sptree)]  # Add the first gene tree
@@ -91,4 +91,5 @@ def main():
 if __name__ == "__main__":
     install_packages()
     main()
+
 
